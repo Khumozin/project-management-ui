@@ -37,9 +37,10 @@ npm run watch   # Build in watch mode
 
 ```
 src/
-├── app/           # Application code
-├── assets/        # Static assets
-└── styles.css     # Global styles
+├── app/            # Application code
+├── index.html      # Entry HTML
+├── main.ts         # Application bootstrap
+└── styles.scss     # Global styles
 ```
 
 ## Code Formatting
