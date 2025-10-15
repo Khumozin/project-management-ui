@@ -9,6 +9,7 @@ import {
     getSortedRowModel,
     PaginationState,
     SortingState,
+    VisibilityState,
 } from '@tanstack/angular-table';
 import { TABLE_PAGINATION } from '../constants/table.constants';
 
@@ -46,6 +47,9 @@ export abstract class BaseEntityList<T> {
   /** Signal for managing column filter state */
   protected readonly _columnFilters = signal<ColumnFiltersState>([]);
 
+  /** Signal for managing column visibility state */
+  protected readonly _columnVisibility = signal<VisibilityState>({});
+
   /**
    * Column definitions for the table.
    * Must be implemented by the extending class.
@@ -59,6 +63,7 @@ export abstract class BaseEntityList<T> {
       columnFilters: this._columnFilters(),
       sorting: this._sorting(),
       pagination: this._pagination(),
+      columnVisibility: this._columnVisibility(),
     },
     onColumnFiltersChange: (updater) => {
       updater instanceof Function
@@ -74,6 +79,11 @@ export abstract class BaseEntityList<T> {
       updater instanceof Function
         ? this._pagination.update(updater)
         : this._pagination.set(updater);
+    },
+    onColumnVisibilityChange: (updater) => {
+      updater instanceof Function
+        ? this._columnVisibility.update(updater)
+        : this._columnVisibility.set(updater);
     },
     getCoreRowModel: getCoreRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
