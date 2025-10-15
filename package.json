@@ -22,19 +22,33 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/cdk": "^20.2.8",
     "@angular/common": "^20.2.0",
     "@angular/compiler": "^20.2.0",
     "@angular/core": "^20.2.0",
     "@angular/forms": "^20.2.0",
     "@angular/platform-browser": "^20.2.0",
     "@angular/router": "^20.2.0",
+    "@ng-icons/core": "^29.10.0",
+    "@ng-icons/lucide": ">=29.0.0",
+    "@spartan-ng/brain": "^0.0.1-alpha.528",
+    "@tailwindcss/postcss": "^4.1.14",
+    "@tanstack/angular-query-experimental": "^5.90.2",
+    "@tanstack/angular-table": "^8.21.3",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "ngx-sonner": ">=3.0.0",
+    "postcss": "^8.5.6",
     "rxjs": "~7.8.0",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss": "^4.1.14",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@angular/build": "^20.2.0",
     "@angular/cli": "^20.2.0",
     "@angular/compiler-cli": "^20.2.0",
+    "@spartan-ng/cli": "^0.0.1-alpha.528",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",
@@ -42,6 +56,9 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "tailwindcss-animate": "^1.0.6",
     "typescript": "~5.9.2"
   }
 }

@@ -1,0 +1,115 @@
+{
+  "nodes": {
+    "project-management-ui": {
+      "name": "project-management-ui",
+      "type": "app",
+      "data": {
+        "root": ".",
+        "projectType": "application",
+        "sourceRoot": "src",
+        "prefix": "app",
+        "name": "project-management-ui",
+        "generators": {
+          "@schematics/angular:component": {
+            "style": "scss",
+            "inlineStyle": true,
+            "inlineTemplate": true,
+            "changeDetection": "OnPush",
+            "skipTests": true,
+            "flat": true
+          }
+        },
+        "targets": {
+          "build": {
+            "executor": "@angular/build:application",
+            "options": {
+              "browser": "src/main.ts",
+              "tsConfig": "tsconfig.app.json",
+              "inlineStyleLanguage": "scss",
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "public"
+                }
+              ],
+              "styles": [
+                "src/styles.scss"
+              ]
+            },
+            "configurations": {
+              "production": {
+                "budgets": [
+                  {
+                    "type": "initial",
+                    "maximumWarning": "500kB",
+                    "maximumError": "1MB"
+                  },
+                  {
+                    "type": "anyComponentStyle",
+                    "maximumWarning": "4kB",
+                    "maximumError": "8kB"
+                  }
+                ],
+                "outputHashing": "all"
+              },
+              "development": {
+                "optimization": false,
+                "extractLicenses": false,
+                "sourceMap": true
+              }
+            },
+            "defaultConfiguration": "production",
+            "parallelism": true
+          },
+          "serve": {
+            "executor": "@angular/build:dev-server",
+            "configurations": {
+              "production": {
+                "buildTarget": "project-management-ui:build:production"
+              },
+              "development": {
+                "buildTarget": "project-management-ui:build:development"
+              }
+            },
+            "defaultConfiguration": "development",
+            "options": {},
+            "parallelism": true
+          },
+          "extract-i18n": {
+            "executor": "@angular/build:extract-i18n",
+            "configurations": {},
+            "options": {},
+            "parallelism": true
+          },
+          "test": {
+            "executor": "@angular/build:karma",
+            "options": {
+              "tsConfig": "tsconfig.spec.json",
+              "inlineStyleLanguage": "scss",
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "public"
+                }
+              ],
+              "styles": [
+                "src/styles.scss"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true
+          }
+        },
+        "implicitDependencies": [],
+        "tags": []
+      }
+    }
+  },
+  "externalNodes": {},
+  "dependencies": {
+    "project-management-ui": []
+  },
+  "version": "6.0",
+  "errors": [],
+  "computedAt": 1760458286254
+}
