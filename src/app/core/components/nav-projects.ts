@@ -6,6 +6,7 @@ import { HlmIcon } from '@spartan-ng/helm/icon';
 import { HlmSidebarImports } from '@spartan-ng/helm/sidebar';
 import { HlmMenuImports } from '@spartan-ng/helm/menu';
 import { BrnMenuImports } from '@spartan-ng/brain/menu';
+import { RouterLink } from '@angular/router';
 
 interface Project {
   name: string;
@@ -22,6 +23,7 @@ interface Project {
     BrnMenuImports,
     HlmIcon,
     NgIcon,
+    RouterLink
   ],
   providers: [
     provideIcons({
@@ -38,7 +40,7 @@ interface Project {
         <ul hlmSidebarMenu>
           @for (project of items(); track $index) {
             <li hlmSidebarMenuItem>
-              <a hlmSidebarMenuButton [href]="project.url">
+              <a hlmSidebarMenuButton [routerLink]="project.url">
                 <ng-icon hlm [name]="project.icon" size="sm" />
                 <span>{{ project.name }}</span>
               </a>
