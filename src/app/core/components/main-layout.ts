@@ -13,10 +13,21 @@ import {
 import { BrnMenuImports } from '@spartan-ng/brain/menu';
 import { HlmMenuImports } from '@spartan-ng/helm/menu';
 import { Sidebar } from './sidebar';
+import { Breadcrumb } from './breadcrumb';
+import { ThemeToggle } from './theme-toggle';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-main-layout',
-  imports: [HlmSidebarImports, HlmMenuImports, BrnMenuImports, Sidebar],
+  imports: [
+    HlmSidebarImports,
+    HlmMenuImports,
+    BrnMenuImports,
+    Sidebar,
+    Breadcrumb,
+    ThemeToggle,
+    RouterOutlet,
+  ],
   providers: [
     provideIcons({
       lucideChevronDown,
@@ -27,32 +38,21 @@ import { Sidebar } from './sidebar';
       <app-sidebar />
       <div class="flex flex-1 flex-col">
         <header
-          class="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12"
+          class="flex h-16 shrink-0 items-center justify-between gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12"
         >
           <div class="flex items-center gap-2 px-4">
-            <button hlmSidebarTrigger class="-ml-1"><span class="sr-only"></span></button>
-            <!-- <Separator orientation="vertical" class="mr-2 data-[orientation=vertical]:h-4" />
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem class="hidden md:block">
-                <BreadcrumbLink href="#"> Building Your Application </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator class="hidden md:block" />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb> -->
+            <button hlmSidebarTrigger class="-ml-1">
+              <span class="sr-only"></span>
+            </button>
+            <app-breadcrumb />
           </div>
+
+          <app-theme-toggle class="px-4" />
         </header>
-        <div class="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <div class="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div class="bg-muted/50 aspect-video rounded-xl"></div>
-            <div class="bg-muted/50 aspect-video rounded-xl"></div>
-            <div class="bg-muted/50 aspect-video rounded-xl"></div>
-          </div>
-          <div class="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min"></div>
-        </div>
+
+        <main class="flex-1 overflow-y-auto">
+          <router-outlet />
+        </main>
       </div>
     </div>
   `,

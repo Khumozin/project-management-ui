@@ -143,7 +143,7 @@ const data = {
     },
     {
       name: 'Travel',
-      url: '',
+      url: '/projects',
       icon: 'lucideMap',
     },
   ],

@@ -244,7 +244,7 @@ import {
   `,
   styles: ``,
   host: {
-    class: 'flex w-full flex-col justify-start gap-6',
+    class: 'flex w-full h-full flex-col justify-start gap-6',
   },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
