@@ -169,7 +169,7 @@ const data = {
     }),
   ],
   template: `
-    <hlm-sidebar [collapsible]="'icon'">
+    <hlm-sidebar [collapsible]="'icon'" data-cy="sidebar">
       <div hlmSidebarHeader>
         <app-team-switcher [teams]="data.teams" />
       </div>

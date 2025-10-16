@@ -12,7 +12,7 @@ import { ThemeService, Theme } from '../services/theme.service';
   imports: [NgIcon, HlmIcon, BrnMenuImports, HlmMenuImports, HlmButtonImports],
   providers: [provideIcons({ lucideSun, lucideMoon, lucideMonitor, lucideCheck })],
   template: `
-    <button hlmBtn variant="ghost" size="icon" [brnMenuTriggerFor]="themeMenu">
+    <button hlmBtn variant="ghost" size="icon" [brnMenuTriggerFor]="themeMenu" data-cy="theme-toggle" aria-label="Toggle theme">
       @if (theme() === 'light') {
         <ng-icon hlm name="lucideSun" size="sm" />
       } @else if (theme() === 'dark') {
