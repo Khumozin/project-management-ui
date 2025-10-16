@@ -1,0 +1,26 @@
+{
+  "newProject": {
+    "name": "Test Project",
+    "description": "This is a test project created by Cypress",
+    "status": "In Progress"
+  },
+  "updatedProject": {
+    "name": "Updated Test Project",
+    "description": "This project has been updated by Cypress",
+    "status": "Completed"
+  },
+  "sampleProjects": [
+    {
+      "id": 1,
+      "name": "Project Alpha",
+      "description": "First sample project",
+      "status": "In Progress"
+    },
+    {
+      "id": 2,
+      "name": "Project Beta",
+      "description": "Second sample project",
+      "status": "Completed"
+    }
+  ]
+}

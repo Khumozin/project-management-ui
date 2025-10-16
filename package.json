@@ -8,7 +8,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:ci": "ng test --no-watch --browsers=ChromeHeadless",
-    "test:coverage": "ng test --no-watch --code-coverage --browsers=ChromeHeadless"
+    "test:coverage": "ng test --no-watch --code-coverage --browsers=ChromeHeadless",
+    "e2e": "cypress open",
+    "e2e:headless": "cypress run",
+    "e2e:ci": "start-server-and-test start http://localhost:4200 e2e:headless"
   },
   "prettier": {
     "printWidth": 100,
@@ -50,8 +53,10 @@
     "@angular/build": "^20.2.0",
     "@angular/cli": "^20.2.0",
     "@angular/compiler-cli": "^20.2.0",
+    "@cypress/schematic": "^4.1.4",
     "@spartan-ng/cli": "^0.0.1-alpha.528",
     "@types/jasmine": "~5.1.0",
+    "cypress": "^13.15.2",
     "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -60,6 +65,7 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
+    "start-server-and-test": "^2.1.2",
     "tailwindcss-animate": "^1.0.6",
     "typescript": "~5.9.2"
   }
