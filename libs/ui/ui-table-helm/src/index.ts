@@ -1,6 +1,7 @@
 import {
   HlmCaption,
   HlmTable,
+  HlmTableContainer,
   HlmTBody,
   HlmTd,
   HlmTFoot,
@@ -13,6 +14,7 @@ export * from './lib/hlm-table';
 
 export const HlmTableImports = [
   HlmCaption,
+  HlmTableContainer,
   HlmTable,
   HlmTBody,
   HlmTd,
