@@ -36,7 +36,7 @@ import { RouterOutlet } from '@angular/router';
   template: `
     <div hlmSidebarWrapper>
       <app-sidebar />
-      <div class="flex flex-1 flex-col">
+      <main hlmSidebarInset class="flex flex-1 flex-col">
         <header
           class="flex h-16 shrink-0 items-center justify-between gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12"
         >
@@ -50,10 +50,10 @@ import { RouterOutlet } from '@angular/router';
           <app-theme-toggle class="px-4" />
         </header>
 
-        <main class="flex-1 overflow-y-auto">
+        <div class="flex-1 overflow-y-auto">
           <router-outlet />
-        </main>
-      </div>
+        </div>
+      </main>
     </div>
   `,
   styles: ``,

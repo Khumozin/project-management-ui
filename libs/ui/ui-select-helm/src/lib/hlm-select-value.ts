@@ -12,7 +12,7 @@ export class HlmSelectValue {
   public readonly userClass = input<ClassValue>('', { alias: 'class' });
   protected readonly _computedClass = computed(() =>
     hlm(
-      'data-[placeholder]:text-muted-foreground line-clamp-1 flex items-center gap-2',
+      'data-[placeholder]:text-muted-foreground line-clamp-1 flex items-center gap-2 truncate',
       this.userClass(),
     ),
   );
